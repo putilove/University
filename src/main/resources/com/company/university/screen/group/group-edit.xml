@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://groupEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="groupDc"
+                  class="com.company.university.entity.Group">
+            <fetchPlan extends="_base">
+                <property name="students" fetchPlan="_base"/>
+                <property name="timetable" fetchPlan="_base">
+                    <property name="auditorium" fetchPlan="_base"/>
+                    <property name="teacher" fetchPlan="_base"/>
+                </property>
+            </fetchPlan>
+            <loader/>
+            <collection id="studentsDc" property="students"/>
+            <collection id="timetableDc" property="timetable"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="editActions">
+        <form id="form" dataContainer="groupDc">
+            <column width="350px">
+                <textField id="numberField" property="number"/>
+            </column>
+        </form>
+        <groupBox id="studentsBox" caption="msg://com.company.university.entity/Group.students">
+            <table id="studentsTable" dataContainer="studentsDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                    <action id="remove" type="remove"/>
+                </actions>
+                <columns>
+                    <column id="fullname"/>
+                    <column id="gradebookNumber"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="studentsTable.create"/>
+                    <button action="studentsTable.edit"/>
+                    <button action="studentsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <groupBox id="timetableBox" caption="msg://com.company.university.entity/Group.timetable">
+            <table id="timetableTable" dataContainer="timetableDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                    <action id="remove" type="remove"/>
+                </actions>
+                <columns>
+                    <column id="date"/>
+                    <column id="time"/>
+                    <column id="auditorium"/>
+                    <column id="teacher"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="timetableTable.create"/>
+                    <button action="timetableTable.edit"/>
+                    <button action="timetableTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

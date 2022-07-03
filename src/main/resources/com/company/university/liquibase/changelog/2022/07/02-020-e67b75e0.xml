@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="University">
+        <createTable tableName="AUDITORIUM">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_AUDITORIUM"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="NUMBER" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CAPACITY" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="University">
+        <createTable tableName="GROUP_">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_GROUP_"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="NUMBER" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="University">
+        <createTable tableName="LESSON">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_LESSON"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="GROUP_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TIME" type="TIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AUDITORIUM_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TEACHER_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="4" author="University">
+        <createTable tableName="STUDENT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_STUDENT"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="FULLNAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GRADEBOOK_NUMBER" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GROUP_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="5" author="University">
+        <createTable tableName="TEACHER">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TEACHER"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FULLNAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="6" author="University">
+        <createIndex indexName="IDX_LESSON_AUDITORIUM_ID" tableName="LESSON">
+            <column name="AUDITORIUM_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="AUDITORIUM_ID" baseTableName="LESSON"
+                                 constraintName="FK_LESSON_ON_AUDITORIUM" referencedColumnNames="ID"
+                                 referencedTableName="AUDITORIUM"/>
+    </changeSet>
+    <changeSet id="7" author="University">
+        <createIndex indexName="IDX_LESSON_GROUP_ID" tableName="LESSON">
+            <column name="GROUP_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="GROUP_ID" baseTableName="LESSON" constraintName="FK_LESSON_ON_GROUP"
+                                 referencedColumnNames="ID" referencedTableName="GROUP_"/>
+    </changeSet>
+    <changeSet id="8" author="University">
+        <createIndex indexName="IDX_LESSON_TEACHER_ID" tableName="LESSON">
+            <column name="TEACHER_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="TEACHER_ID" baseTableName="LESSON"
+                                 constraintName="FK_LESSON_ON_TEACHER" referencedColumnNames="ID"
+                                 referencedTableName="TEACHER"/>
+    </changeSet>
+    <changeSet id="9" author="University">
+        <createIndex indexName="IDX_STUDENT_GROUP_ID" tableName="STUDENT">
+            <column name="GROUP_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="GROUP_ID" baseTableName="STUDENT" constraintName="FK_STUDENT_ON_GROUP"
+                                 referencedColumnNames="ID" referencedTableName="GROUP_"/>
+    </changeSet>
+    <changeSet id="10" author="University">
+        <dropForeignKeyConstraint baseTableName="project" constraintName="fk_project_on_manager"/>
+    </changeSet>
+    <changeSet id="11" author="University">
+        <dropForeignKeyConstraint baseTableName="task_" constraintName="fk_task__on_asignee"/>
+    </changeSet>
+    <changeSet id="12" author="University">
+        <dropForeignKeyConstraint baseTableName="task_" constraintName="fk_task__on_project"/>
+    </changeSet>
+    <changeSet id="13" author="University">
+        <dropTable cascadeConstraints="true" tableName="project"/>
+    </changeSet>
+    <changeSet id="14" author="University">
+        <dropTable cascadeConstraints="true" tableName="task_"/>
+    </changeSet>
+</databaseChangeLog>
