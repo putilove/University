@@ -10,6 +10,9 @@
               caption="msg://com.company.university.screen.auditorium/auditoriumBrowse.menu"/>
         <item screen="Group_.browse" caption="msg://com.company.university.screen.group/groupBrowse.menu"/>
         <item screen="Teacher.browse" caption="msg://com.company.university.screen.teacher/teacherBrowse.menu"/>
+        <item screen="Group_.Onlybrowse" caption="msg://com.company.university.screen.group/groupOnlyBrowse.menu"/>
+        <item screen="TestTimetable" caption="msg://com.company.university.screen.testtimetable/testTimetable.caption"/>
+        <item screen="Lesson.Onbrowse" caption="msg://com.company.university.screen.lesson/lessonOnBrowse.menu"/>
     </menu>
 
 </menu-config>
