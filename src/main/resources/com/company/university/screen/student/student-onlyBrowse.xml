@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://studentOnlyBrowse.caption"
+        focusComponent="studentsTable">
+    <data readOnly="true">
+        <collection id="groupNumbersDc"
+                    class="com.company.university.entity.Group">
+            <fetchPlan extends="_base"/>
+            <loader id="groupNumbersDl">
+                <query>
+                    <![CDATA[select e from Group_ e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="studentsDc"
+                    class="com.company.university.entity.Student">
+            <fetchPlan extends="_base">
+                <property name="group" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="studentsDl">
+                <query>
+                    <![CDATA[select e from Student e]]>
+                    <condition>
+                        <and>
+                            <c:jpql>
+                                <c:where>e.group = :component_groupFilterField</c:where>
+                            </c:jpql>
+                        </and>
+                    </condition>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="studentsTable" spacing="true">
+        <hbox spacing="true">
+            <label value="Choose group number"/>
+            <entityComboBox id="groupFilterField"
+                            caption="msg://com.company.university.entity/Group.number"
+                            optionsContainer="groupNumbersDc"
+                            nullOptionVisible="true"/>
+        </hbox>
+        <dataGrid id="studentsTable"
+                  width="100%"
+                  dataContainer="studentsDc">
+            <actions>
+            </actions>
+            <columns>
+                <column property="fullname" id="fullname"/>
+                <column property="gradebookNumber" id="gradebookNumber"/>
+                <column property="group" id="group"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+            </buttonsPanel>
+        </dataGrid>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

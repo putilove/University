@@ -7,6 +7,7 @@ import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.entity.annotation.OnDelete;
 import io.jmix.core.entity.annotation.OnDeleteInverse;
 import io.jmix.core.metamodel.annotation.Composition;
+import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -59,6 +60,7 @@ public class Teacher {
     @Version
     private Integer version;
 
+    @InstanceName
     @Column(name = "FULLNAME", nullable = false)
     @NotNull
     private String fullname;

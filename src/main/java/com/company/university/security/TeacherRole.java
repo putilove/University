@@ -10,10 +10,10 @@ import io.jmix.security.role.annotation.SpecificPolicy;
 import io.jmix.securityui.role.annotation.MenuPolicy;
 import io.jmix.securityui.role.annotation.ScreenPolicy;
 
-@ResourceRole(name = "StudentRole", code = "student-role")
-public interface StudentRole {
-    @MenuPolicy(menuIds = "GroupTimeTable.OnlyBrowse")
-    @ScreenPolicy(screenIds = {"GroupTimeTable.OnlyBrowse", "LoginScreen", "MainScreen", "ui_GroupFilterCondition.edit", "ui_AddConditionScreen", "ui_JpqlFilterCondition.edit", "ui_PropertyFilterCondition.edit", "inputDialog", "entityInfoWindow", "backgroundWorkProgressScreen", "ui_LayoutAnalyzerScreen", "bulkEditorWindow", "ui_FilterConfigurationModel.fragment", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment"})
+@ResourceRole(name = "TeacherRole", code = "teacher-role")
+public interface TeacherRole {
+    @MenuPolicy(menuIds = {"GroupTimeTable.OnlyBrowse", "Student.OnlyBrowse"})
+    @ScreenPolicy(screenIds = {"GroupTimeTable.OnlyBrowse", "Student.OnlyBrowse", "LoginScreen", "MainScreen", "entityInfoWindow", "backgroundWorkProgressScreen", "bulkEditorWindow", "ui_LayoutAnalyzerScreen", "ui_AddConditionScreen", "ui_GroupFilterCondition.edit", "ui_JpqlFilterCondition.edit", "ui_PropertyFilterCondition.edit", "ui_FilterConfigurationModel.fragment", "inputDialog", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment"})
     void screens();
 
     @EntityAttributePolicy(entityClass = Auditorium.class, attributes = "*", action = EntityAttributePolicyAction.VIEW)
@@ -36,6 +36,6 @@ public interface StudentRole {
     @EntityPolicy(entityClass = Teacher.class, actions = EntityPolicyAction.READ)
     void teacher();
 
-    @SpecificPolicy(resources = {"datatools.ui.showEntityInfo", "ui.loginToUi", "ui.filter.modifyConfiguration", "ui.filter.modifyJpqlCondition", "ui.presentations.global", "ui.filter.modifyGlobalConfiguration", "ui.bulkEdit.enabled"})
+    @SpecificPolicy(resources = {"ui.presentations.global", "ui.filter.modifyJpqlCondition", "ui.filter.modifyConfiguration", "ui.bulkEdit.enabled", "ui.loginToUi", "datatools.ui.showEntityInfo", "ui.filter.modifyGlobalConfiguration"})
     void specific();
 }

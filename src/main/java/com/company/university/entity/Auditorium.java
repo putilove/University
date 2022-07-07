@@ -3,6 +3,7 @@ package com.company.university.entity;
 import io.jmix.core.annotation.DeletedBy;
 import io.jmix.core.annotation.DeletedDate;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -54,6 +55,7 @@ public class Auditorium {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastModifiedDate;
 
+    @InstanceName
     @Column(name = "NUMBER", nullable = false)
     @NotNull
     private Integer number;
