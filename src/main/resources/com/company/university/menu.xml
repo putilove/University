@@ -4,15 +4,12 @@
     <menu id="application" caption="msg://com.company.university/menu.application" insertBefore="administration">
         <item screen="User.browse" caption="msg://com.company.university.screen.user/UserBrowse.caption"/>
         <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
-        <item screen="Student.browse" caption="msg://com.company.university.screen.student/studentBrowse.menu"/>
-        <item screen="Lesson.browse" caption="msg://com.company.university.screen.lesson/lessonBrowse.menu"/>
         <item screen="Auditorium.browse"
               caption="msg://com.company.university.screen.auditorium/auditoriumBrowse.menu"/>
         <item screen="Group_.browse" caption="msg://com.company.university.screen.group/groupBrowse.menu"/>
+        <item screen="Lesson.browse" caption="msg://com.company.university.screen.lesson/lessonBrowse.menu"/>
+        <item screen="Student.browse" caption="msg://com.company.university.screen.student/studentBrowse.menu"/>
         <item screen="Teacher.browse" caption="msg://com.company.university.screen.teacher/teacherBrowse.menu"/>
-        <item screen="GroupTimeTable.OnlyBrowse"
-              caption="msg://com.company.university.screen.lesson/groupTimeTableOnlyBrowse.menu"/>
-        <item screen="Student.OnlyBrowse" caption="msg://com.company.university.screen.student/studentOnlyBrowse.menu"/>
     </menu>
 
 </menu-config>

@@ -13,7 +13,7 @@ import io.jmix.securityui.role.annotation.ScreenPolicy;
 @ResourceRole(name = "DeanOfficeEmployee", code = "dean-office-employee")
 public interface DeanOfficeEmployeeRole {
     @MenuPolicy(menuIds = {"Group_.browse", "Student.browse"})
-    @ScreenPolicy(screenIds = {"Group_.browse", "Group_.edit", "Student.browse", "LoginScreen", "MainScreen", "Student.edit", "entityInfoWindow", "backgroundWorkProgressScreen", "bulkEditorWindow", "ui_LayoutAnalyzerScreen", "ui_AddConditionScreen", "ui_GroupFilterCondition.edit", "ui_JpqlFilterCondition.edit", "ui_PropertyFilterCondition.edit", "ui_FilterConfigurationModel.fragment", "inputDialog", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment"})
+    @ScreenPolicy(screenIds = {"LoginScreen", "MainScreen", "entityInfoWindow", "backgroundWorkProgressScreen", "bulkEditorWindow", "ui_LayoutAnalyzerScreen", "ui_AddConditionScreen", "ui_GroupFilterCondition.edit", "ui_JpqlFilterCondition.edit", "ui_PropertyFilterCondition.edit", "ui_FilterConfigurationModel.fragment", "inputDialog", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment", "Group_.edit", "Student.edit", "Group_.browse", "Student.browse"})
     void screens();
 
     @EntityAttributePolicy(entityClass = Group.class, attributes = "*", action = EntityAttributePolicyAction.MODIFY)

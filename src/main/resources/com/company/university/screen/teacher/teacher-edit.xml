@@ -6,11 +6,7 @@
         <instance id="teacherDc"
                   class="com.company.university.entity.Teacher">
             <fetchPlan extends="_base">
-                <property name="timetable" fetchPlan="_base">
-                    <property name="group" fetchPlan="_base"/>
-                    <property name="auditorium" fetchPlan="_base"/>
-                    <property name="teacher" fetchPlan="_base"/>
-                </property>
+                <property name="timetable" fetchPlan="_base"/>
             </fetchPlan>
             <loader/>
             <collection id="timetableDc" property="timetable"/>
@@ -48,11 +44,8 @@
                 <columns>
                     <column id="date"/>
                     <column id="time"/>
-                    <column id="group"/>
-                    <column id="auditorium"/>
-                    <column id="teacher"/>
                 </columns>
-                <buttonsPanel>
+                <buttonsPanel id="buttonsPanel">
                     <button action="timetableTable.create"/>
                     <button action="timetableTable.edit"/>
                     <button action="timetableTable.remove"/>

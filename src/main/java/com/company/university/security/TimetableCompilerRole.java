@@ -12,8 +12,8 @@ import io.jmix.securityui.role.annotation.ScreenPolicy;
 
 @ResourceRole(name = "TimetableCompilerRole", code = "timetable-compiler-role")
 public interface TimetableCompilerRole {
-    @MenuPolicy(menuIds = {"Lesson.browse", "Auditorium.browse"})
-    @ScreenPolicy(screenIds = {"Lesson.browse", "Auditorium.browse", "Auditorium.edit", "Lesson.edit", "LoginScreen", "MainScreen", "entityInfoWindow", "backgroundWorkProgressScreen", "bulkEditorWindow", "ui_LayoutAnalyzerScreen", "ui_AddConditionScreen", "ui_GroupFilterCondition.edit", "ui_PropertyFilterCondition.edit", "ui_JpqlFilterCondition.edit", "ui_FilterConfigurationModel.fragment", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment", "Group_.browse", "Teacher.browse"})
+    @MenuPolicy(menuIds = {"Auditorium.browse", "Lesson.browse"})
+    @ScreenPolicy(screenIds = {"LoginScreen", "MainScreen", "entityInfoWindow", "backgroundWorkProgressScreen", "bulkEditorWindow", "ui_LayoutAnalyzerScreen", "ui_AddConditionScreen", "ui_GroupFilterCondition.edit", "ui_PropertyFilterCondition.edit", "ui_JpqlFilterCondition.edit", "ui_FilterConfigurationModel.fragment", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment", "Auditorium.edit", "Lesson.edit", "Auditorium.browse", "Lesson.browse", "Group_.browse", "Teacher.browse"})
     void screens();
 
     @EntityAttributePolicy(entityClass = Auditorium.class, attributes = "*", action = EntityAttributePolicyAction.MODIFY)

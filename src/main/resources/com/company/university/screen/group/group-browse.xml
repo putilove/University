@@ -8,10 +8,7 @@
                     class="com.company.university.entity.Group">
             <fetchPlan extends="_base">
                 <property name="students" fetchPlan="_base"/>
-                <property name="timetable" fetchPlan="_base">
-                    <property name="auditorium" fetchPlan="_base"/>
-                    <property name="teacher" fetchPlan="_base"/>
-                </property>
+                <property name="timetable" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="groupsDl">
                 <query>
@@ -37,20 +34,16 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="groupsTable" spacing="true">
-        <filter id="filter"
-                dataLoader="groupsDl">
-            <properties include=".*"/>
-        </filter>
-        <groupTable id="groupsTable"
-                    width="100%"
-                    dataContainer="groupsDc">
+        <dataGrid id="groupsTable"
+                  width="100%"
+                  dataContainer="groupsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="number"/>
+                <column property="number" id="number"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
@@ -59,7 +52,7 @@
                 <button id="editBtn" action="groupsTable.edit"/>
                 <button id="removeBtn" action="groupsTable.remove"/>
             </buttonsPanel>
-        </groupTable>
+        </dataGrid>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>

@@ -12,8 +12,8 @@ import io.jmix.securityui.role.annotation.ScreenPolicy;
 
 @ResourceRole(name = "TeacherRole", code = "teacher-role")
 public interface TeacherRole {
-    @MenuPolicy(menuIds = {"GroupTimeTable.OnlyBrowse", "Student.OnlyBrowse"})
-    @ScreenPolicy(screenIds = {"GroupTimeTable.OnlyBrowse", "Student.OnlyBrowse", "LoginScreen", "MainScreen", "entityInfoWindow", "backgroundWorkProgressScreen", "bulkEditorWindow", "ui_LayoutAnalyzerScreen", "ui_AddConditionScreen", "ui_GroupFilterCondition.edit", "ui_JpqlFilterCondition.edit", "ui_PropertyFilterCondition.edit", "ui_FilterConfigurationModel.fragment", "inputDialog", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment"})
+    @MenuPolicy(menuIds = {"Group_.browse", "Lesson.browse", "Student.browse"})
+    @ScreenPolicy(screenIds = {"LoginScreen", "MainScreen", "entityInfoWindow", "backgroundWorkProgressScreen", "bulkEditorWindow", "ui_LayoutAnalyzerScreen", "ui_AddConditionScreen", "ui_GroupFilterCondition.edit", "ui_JpqlFilterCondition.edit", "ui_PropertyFilterCondition.edit", "ui_FilterConfigurationModel.fragment", "inputDialog", "selectValueDialog", "ui_UiDataFilterConfigurationModel.fragment", "Group_.browse", "Lesson.browse", "Student.browse"})
     void screens();
 
     @EntityAttributePolicy(entityClass = Auditorium.class, attributes = "*", action = EntityAttributePolicyAction.VIEW)

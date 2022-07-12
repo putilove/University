@@ -7,11 +7,7 @@
         <collection id="teachersDc"
                     class="com.company.university.entity.Teacher">
             <fetchPlan extends="_base">
-                <property name="timetable" fetchPlan="_base">
-                    <property name="group" fetchPlan="_base"/>
-                    <property name="auditorium" fetchPlan="_base"/>
-                    <property name="teacher" fetchPlan="_base"/>
-                </property>
+                <property name="timetable" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="teachersDl">
                 <query>
@@ -37,21 +33,17 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="teachersTable" spacing="true">
-        <filter id="filter"
-                dataLoader="teachersDl">
-            <properties include=".*"/>
-        </filter>
-        <groupTable id="teachersTable"
-                    width="100%"
-                    dataContainer="teachersDc">
+        <dataGrid id="teachersTable"
+                  width="100%"
+                  dataContainer="teachersDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="fullname"/>
-                <column id="email"/>
+                <column property="fullname" id="fullname"/>
+                <column property="email" id="email"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
@@ -60,7 +52,7 @@
                 <button id="editBtn" action="teachersTable.edit"/>
                 <button id="removeBtn" action="teachersTable.remove"/>
             </buttonsPanel>
-        </groupTable>
+        </dataGrid>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>

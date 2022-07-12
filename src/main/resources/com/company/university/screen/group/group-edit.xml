@@ -7,10 +7,7 @@
                   class="com.company.university.entity.Group">
             <fetchPlan extends="_base">
                 <property name="students" fetchPlan="_base"/>
-                <property name="timetable" fetchPlan="_base">
-                    <property name="auditorium" fetchPlan="_base"/>
-                    <property name="teacher" fetchPlan="_base"/>
-                </property>
+                <property name="timetable" fetchPlan="_base"/>
             </fetchPlan>
             <loader/>
             <collection id="studentsDc" property="students"/>
@@ -66,8 +63,6 @@
                 <columns>
                     <column id="date"/>
                     <column id="time"/>
-                    <column id="auditorium"/>
-                    <column id="teacher"/>
                 </columns>
                 <buttonsPanel>
                     <button action="timetableTable.create"/>

@@ -6,7 +6,9 @@
     <data readOnly="true">
         <collection id="studentsDc"
                     class="com.company.university.entity.Student">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="group" fetchPlan="_base"/>
+            </fetchPlan>
             <loader id="studentsDl">
                 <query>
                     <![CDATA[select e from Student e]]>
@@ -35,17 +37,18 @@
                 dataLoader="studentsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="studentsTable"
-                    width="100%"
-                    dataContainer="studentsDc">
+        <dataGrid id="studentsTable"
+                  width="100%"
+                  dataContainer="studentsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="fullname"/>
-                <column id="gradebookNumber"/>
+                <column property="fullname" id="fullname"/>
+                <column property="gradebookNumber" id="gradebookNumber"/>
+                <column property="group" id="group"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
@@ -54,7 +57,7 @@
                 <button id="editBtn" action="studentsTable.edit"/>
                 <button id="removeBtn" action="studentsTable.remove"/>
             </buttonsPanel>
-        </groupTable>
+        </dataGrid>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
