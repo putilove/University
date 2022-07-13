@@ -76,4 +76,89 @@
 
     </changeSet>
 
+    <changeSet id="5" author="University" context="!cuba">
+
+        <insert tableName="USER_" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="b164ba2a-89a5-3e31-2461-db2648135cf0"/>
+            <column name="VERSION" value="1"/>
+            <column name="username" value="student"/>
+            <column name="first_name" value="Глеб"/>
+            <column name="last_name" value="Путилов"/>
+            <column name="password" value="{bcrypt}$2a$10$tyCd6nA5htMklePUenj1iOepxZ2J8EIAdyZeoHBovMj2wFHfFvd6m"/>
+            <column name="email" value="gleb.putilove@gmail.com"/>
+            <column name="active" value="true"/>
+            <column name="time_zone_id" value="Europe/Samara"/>
+        </insert>
+
+        <insert tableName="USER_" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="9a029a31-5f7d-c2a5-2ec3-fa4fd4ea4c81"/>
+            <column name="VERSION" value="1"/>
+            <column name="username" value="compiler"/>
+            <column name="first_name" value="Учебный"/>
+            <column name="last_name" value="Отдел"/>
+            <column name="password" value="{bcrypt}$2a$10$7tKcQtrA0tNCLNN.wUl9keUSIfaMKQt6OPSP/p/M0J2wosKr0egjC"/>
+            <column name="email" value="uchotdel@gmail.com"/>
+            <column name="active" value="true"/>
+            <column name="time_zone_id" value="Europe/Samara"/>
+        </insert>
+
+        <insert tableName="USER_" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="12eb6e4c-9a35-2f4e-90f3-1927a9f97883"/>
+            <column name="VERSION" value="1"/>
+            <column name="username" value="teacher"/>
+            <column name="first_name" value="Александр"/>
+            <column name="last_name" value="Белов"/>
+            <column name="password" value="{bcrypt}$2a$10$e.5jscUVfCmORBUBDY12P.NF0RmroMhYgiTX9Mii.OT021wiKfxGa"/>
+            <column name="email" value="belov@gmail.com"/>
+            <column name="active" value="true"/>
+            <column name="time_zone_id" value="Europe/Samara"/>
+        </insert>
+
+        <insert tableName="USER_" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="2ff07b00-86cc-5084-cb3e-f65f6dbc8bd5"/>
+            <column name="VERSION" value="1"/>
+            <column name="username" value="dean"/>
+            <column name="first_name" value="Декан"/>
+            <column name="last_name" value="Коломиец"/>
+            <column name="password" value="{bcrypt}$2a$10$YNNPhB9AnzqUo0WzcrsSl.LqrddicIcx.nVAjKU61rMFgcbOpe0NW"/>
+            <column name="email" value="dean@gmail.com"/>
+            <column name="active" value="true"/>
+            <column name="time_zone_id" value="Europe/Samara"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="6" author="University" context="!cuba">
+        <insert tableName="SEC_ROLE_ASSIGNMENT">
+            <column name="ID" value="b64c7261-ec3d-c0e2-bdd2-d5fca12c6c23"/>
+            <column name="version" value="1"/>
+            <column name="username" value="dean"/>
+            <column name="role_code" value="dean-office-employee"/>
+            <column name="role_type" value="resource"/>
+        </insert>
+
+        <insert tableName="SEC_ROLE_ASSIGNMENT">
+            <column name="ID" value="ed32e675-fc51-9d3c-ee14-71fd13d43914"/>
+            <column name="version" value="1"/>
+            <column name="username" value="teacher"/>
+            <column name="role_code" value="teacher-role"/>
+            <column name="role_type" value="resource"/>
+        </insert>
+
+        <insert tableName="SEC_ROLE_ASSIGNMENT">
+            <column name="ID" value="10a5220c-fab0-68b5-d840-7a54d6879044"/>
+            <column name="version" value="1"/>
+            <column name="username" value="compiler"/>
+            <column name="role_code" value="timetable-compiler-role"/>
+            <column name="role_type" value="resource"/>
+        </insert>
+
+        <insert tableName="SEC_ROLE_ASSIGNMENT">
+            <column name="ID" value="85711afb-4b25-f9a0-2769-f6be4eeac4c5"/>
+            <column name="version" value="1"/>
+            <column name="username" value="student"/>
+            <column name="role_code" value="student-role"/>
+            <column name="role_type" value="resource"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>

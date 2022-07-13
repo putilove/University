@@ -157,18 +157,223 @@
                                  referencedColumnNames="ID" referencedTableName="GROUP_"/>
     </changeSet>
     <changeSet id="10" author="University">
-        <dropForeignKeyConstraint baseTableName="project" constraintName="fk_project_on_manager"/>
+        <insert tableName="AUDITORIUM">
+            <column name="ID" value="b945286b-4241-5a13-3e1d-6da61f2a7246"/>
+            <column name="VERSION" value="1"/>
+            <column name="number" value="608"/>
+            <column name="CAPACITY" value="2"/>
+        </insert>
+        <insert tableName="AUDITORIUM">
+            <column name="ID" value="9289d960-8a41-0535-9890-0262d3e9dcd1"/>
+            <column name="VERSION" value="1"/>
+            <column name="number" value="610"/>
+        </insert>
+        <insert tableName="AUDITORIUM">
+            <column name="ID" value="8d7a1cd7-c2d6-1396-68ce-477618f1c481"/>
+            <column name="VERSION" value="1"/>
+            <column name="number" value="611"/>
+        </insert>
     </changeSet>
+    
     <changeSet id="11" author="University">
-        <dropForeignKeyConstraint baseTableName="task_" constraintName="fk_task__on_asignee"/>
+        <insert tableName="GROUP_">
+            <column name="ID" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+            <column name="VERSION" value="1"/>
+            <column name="number" value="6311"/>
+        </insert>
+        <insert tableName="GROUP_">
+            <column name="ID" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+            <column name="VERSION" value="1"/>
+            <column name="number" value="6312"/>
+        </insert>
     </changeSet>
+
     <changeSet id="12" author="University">
-        <dropForeignKeyConstraint baseTableName="task_" constraintName="fk_task__on_project"/>
+        <insert tableName="student">
+            <column name="ID" value="2fea5f33-81bf-0353-2657-9333c099bef7"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Игуменов Кирилл Сергеевич"/>
+            <column name="gradebook_number" value="2019-6311-1"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="01590add-a718-2882-c9ea-fbc9e60597cf"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Путилов Глеб Романович"/>
+            <column name="gradebook_number" value="2019-6312-1"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="9a2f5d20-88b5-438b-000f-48c38eec8417"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Шафранюк Роман Олегович"/>
+            <column name="gradebook_number" value="2019-6312-3"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="81a1f213-b4a2-af12-14ae-cedd886dc281"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Чекушкина Виктория Андреевна"/>
+            <column name="gradebook_number" value="2019-6312-2"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="3274f7b4-6c81-6f38-7cad-618ccf218aeb"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Самгин Андрей Сергеевич"/>
+            <column name="gradebook_number" value="2019-6312-4"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="9824e67f-5b27-9f3f-3c46-f4b2fc1250f7"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Осипов Никита Андреевич"/>
+            <column name="gradebook_number" value="2019-6312-5"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="fb64878c-5b11-a959-b2ab-6ba23abc78dd"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Шепляков Дмитрий Александрович"/>
+            <column name="gradebook_number" value="2019-6312-6"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="98874558-1766-1824-cc4c-76191e4c6e76"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Беседина Валерия Михайловна"/>
+            <column name="gradebook_number" value="2019-6312-7"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="3930ba27-f0e8-e45e-5e8a-084d33218579"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Гайнулин Дмитрий Азатович"/>
+            <column name="gradebook_number" value="2019-6311-2"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="274d8ae6-6afe-836e-6e28-76facde354af"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Быстрова Елена Павловна"/>
+            <column name="gradebook_number" value="2019-6311-3"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="26bc1e92-3640-3e40-6c2c-c36beead54af"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Приданова Юлия Батьковна"/>
+            <column name="gradebook_number" value="2019-6311-4"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="d4ca63d6-a5d1-1ec8-6bed-14484c0f628c"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Обручникова Ульяна Отцовна"/>
+            <column name="gradebook_number" value="2019-6311-5"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="369102f9-df52-8ce9-14ad-45ff613701c5"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Скосырский Владислав Владиславович"/>
+            <column name="gradebook_number" value="2019-6311-6"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+        </insert>
+        <insert tableName="student">
+            <column name="ID" value="11086d81-8727-1250-93d5-114be77d4a84"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Козлов Егор Козлович"/>
+            <column name="gradebook_number" value="2019-6311-7"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+        </insert>
     </changeSet>
     <changeSet id="13" author="University">
-        <dropTable cascadeConstraints="true" tableName="project"/>
+        <insert tableName="teacher">
+            <column name="ID" value="a71a9fb4-36ef-792c-7800-f1643e9c0718"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Белов Александр Михайлович"/>
+            <column name="email" value="belov@gmail.com"/>
+        </insert>
+        <insert tableName="teacher">
+            <column name="ID" value="43c7ab2d-d446-6b1a-01ec-f16ba7487944"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Белов Александр Михайлович"/>
+            <column name="email" value="belov@gmail.com"/>
+        </insert>
+        <insert tableName="teacher">
+            <column name="ID" value="5858b875-6ceb-a988-4bc0-28c0b2e985ce"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Клевцова Елена Владимировна"/>
+            <column name="email" value="klevtsova@gmail.com"/>
+        </insert>
+        <insert tableName="teacher">
+            <column name="ID" value="1ba84d2e-99cc-b559-8215-66dcc420fba8"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Веричев Забыл ИО"/>
+            <column name="email" value="verichev@gmail.com"/>
+        </insert>
+        <insert tableName="teacher">
+            <column name="ID" value="069e9d61-017b-f133-d48e-6df197af65e6"/>
+            <column name="VERSION" value="1"/>
+            <column name="fullname" value="Юзькив Руслан Романович"/>
+            <column name="email" value="yuzkiv@gmail.com"/>
+        </insert>
     </changeSet>
     <changeSet id="14" author="University">
-        <dropTable cascadeConstraints="true" tableName="task_"/>
+        <insert tableName="LESSON">
+            <column name="ID" value="0d290c64-d2b6-cd34-d5b4-9fd924881f74"/>
+            <column name="VERSION" value="1"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+            <column name="date" value="2022-07-18"/>
+            <column name="time" value="08:00:00"/>
+            <column name="auditorium_id" value="b945286b-4241-5a13-3e1d-6da61f2a7246"/>
+            <column name="teacher_id" value="a71a9fb4-36ef-792c-7800-f1643e9c0718"/>
+        </insert>
+        <insert tableName="LESSON">
+            <column name="ID" value="c909c6d4-cda0-7809-3f45-7a6ad17d222a"/>
+            <column name="VERSION" value="1"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+            <column name="date" value="2022-07-18"/>
+            <column name="time" value="08:00:00"/>
+            <column name="auditorium_id" value="9289d960-8a41-0535-9890-0262d3e9dcd1"/>
+            <column name="teacher_id" value="43c7ab2d-d446-6b1a-01ec-f16ba7487944"/>
+        </insert>
+        <insert tableName="LESSON">
+            <column name="ID" value="e7b4919f-05ba-62fc-1edd-fb783fcdc835"/>
+            <column name="VERSION" value="1"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+            <column name="date" value="2022-07-18"/>
+            <column name="time" value="09:45:00"/>
+            <column name="auditorium_id" value="8d7a1cd7-c2d6-1396-68ce-477618f1c481"/>
+            <column name="teacher_id" value="5858b875-6ceb-a988-4bc0-28c0b2e985ce"/>
+        </insert>
+        <insert tableName="LESSON">
+            <column name="ID" value="08eb1385-88b8-829b-c77e-c7e04dce362a"/>
+            <column name="VERSION" value="1"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+            <column name="date" value="2022-07-18"/>
+            <column name="time" value="09:45:00"/>
+            <column name="auditorium_id" value="9289d960-8a41-0535-9890-0262d3e9dcd1"/>
+            <column name="teacher_id" value="1ba84d2e-99cc-b559-8215-66dcc420fba8"/>
+        </insert>
+        <insert tableName="LESSON">
+            <column name="ID" value="d11f68b4-6511-2cb1-629c-37433425abd2"/>
+            <column name="VERSION" value="1"/>
+            <column name="group_id" value="61c92663-0f87-87e8-aa73-edc123a298a6"/>
+            <column name="date" value="2022-07-18"/>
+            <column name="time" value="11:30:00"/>
+            <column name="auditorium_id" value="b945286b-4241-5a13-3e1d-6da61f2a7246"/>
+            <column name="teacher_id" value="069e9d61-017b-f133-d48e-6df197af65e6"/>
+        </insert>
+        <insert tableName="LESSON">
+            <column name="ID" value="ee49b154-a1b0-cbee-89f0-4389718e1f7d"/>
+            <column name="VERSION" value="1"/>
+            <column name="group_id" value="9dab8568-4d4d-9de1-ad33-85e32f8467a9"/>
+            <column name="date" value="2022-07-18"/>
+            <column name="time" value="11:30:00"/>
+            <column name="auditorium_id" value="9289d960-8a41-0535-9890-0262d3e9dcd1"/>
+            <column name="teacher_id" value="43c7ab2d-d446-6b1a-01ec-f16ba7487944"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>
